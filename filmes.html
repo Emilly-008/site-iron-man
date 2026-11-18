@@ -108,37 +108,74 @@
             </div>
         </div>
 
-        <div class="form-container-wrapper" style="margin-top: 50px;">
-            <h3 style="color: #ffb700; margin-bottom: 20px; font-size: 1.4rem; text-align: center;">
-                <i class="fa-solid fa-comments"></i> Deixe a sua Opinião sobre o Trailer
-            </h3>
-            <form class="stark-form" action="#" method="POST">
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="nome-opiniao"><i class="fa-solid fa-user"></i> O seu Nome</label>
-                        <input type="text" id="nome-opiniao" name="nome-opiniao" placeholder="Ex: Tony Stark" required>
-                    </div>
+        
+<div class="form-container-wrapper" style="margin-top: 50px;">
+    <h3 style="color: #ffb700; margin-bottom: 20px; font-size: 1.4rem; text-align: center;">
+        <i class="fa-solid fa-comments"></i> Deixe a sua Opinião sobre o Trailer
+    </h3>
 
-                    <div class="form-group">
-                        <label for="expectativa"><i class="fa-solid fa-chart-line"></i> Nível de Expectativa</label>
-                        <select id="expectativa" name="expectativa">
-                            <option value="maxima">🔥 Máxima (Impressionante!)</option>
-                            <option value="alta">⚡ Alta (Muito bom)</option>
-                            <option value="boa">👍 Boa (Esperava um pouco mais)</option>
-                        </select>
-                    </div>
-                </div>
+    <form class="stark-form" id="formOpiniao">
 
-                <div class="form-group">
-                    <label for="comentario-trailer"><i class="fa-solid fa-message"></i> O que achou dos gráficos e do trailer?</label>
-                    <textarea id="comentario-trailer" name="comentario-trailer" rows="4" placeholder="Escreva a sua análise sobre o vídeo, trilha sonora ou cenas mostradas..." required></textarea>
-                </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="nome-opiniao">
+                    <i class="fa-solid fa-user"></i> O seu Nome
+                </label>
+                <input
+                    type="text"
+                    id="nome-opiniao"
+                    name="nome-opiniao"
+                    placeholder="Ex: Tony Stark"
+                    minlength="3"
+                    pattern="[A-Za-zÀ-ÿ ]{3,}"
+                    required>
+            </div>
 
-                <button type="submit" class="btn btn-primary btn-submit">
-                    <i class="fa-solid fa-paper-plane"></i> Publicar Opinião no Sistema
-                </button>
-            </form>
+            <div class="form-group">
+                <label for="email-opiniao">
+                    <i class="fa-solid fa-envelope"></i> Seu E-mail
+                </label>
+                <input
+                    type="email"
+                    id="email-opiniao"
+                    name="email-opiniao"
+                    placeholder="Ex: tony@email.com"
+                    required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="expectativa">
+                <i class="fa-solid fa-chart-line"></i> Nível de Expectativa
+            </label>
+            <select id="expectativa" name="expectativa" required>
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option value="maxima">🔥 Máxima (Impressionante!)</option>
+                <option value="alta">⚡ Alta (Muito bom)</option>
+                <option value="boa">👍 Boa (Esperava um pouco mais)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="comentario-trailer">
+                <i class="fa-solid fa-message"></i> O que achou dos gráficos e do trailer?
+            </label>
+            <textarea
+                id="comentario-trailer"
+                name="comentario-trailer"
+                rows="4"
+                minlength="10"
+                placeholder="Escreva a sua análise sobre o vídeo, trilha sonora ou cenas mostradas..."
+                required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit">
+            <i class="fa-solid fa-paper-plane"></i> Publicar Opinião no Sistema
+        </button>
+
+    </form>
+</div>
+
         </div>
     </section>
 
@@ -238,5 +275,6 @@
                 Portal desenvolvido exclusivamente para fins acadêmicos • Universo Homem de Ferro
         </p>
 </footer>
+<script src="js/filmes.js"></script>
 </body>
 </html>
