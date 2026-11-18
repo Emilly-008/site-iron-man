@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Homem-de-Ferro</title>
+    <link rel="icon" type="image/png" href="img/icone-ironman.png">
+</head>
+<body>
+   <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/Iron-Man-Logo.png" alt="Iron Man">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="tony-stark.html">Tony Stark</a>
+            <a href="armaduras.html">Armaduras</a>
+            <a href="tecnologias.html" class="active">Tecnologias</a>
+            <a href="inimigos.html">Inimigos</a>
+            <a href="filmes.html">Filmes</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="linhadotempo.html">Linha do tempo</a>
+            <a href="quiz.html">Quiz</a>
+        </nav>
+    </header>
+
+
+    <section class="stark-container">
+        <h2 class="stark-main-title">ARMADURAS DO HOMEM DE FERRO</h2>
+    
+
+        <div class="stark-grid">
+        
+   
+            <article class="stark-card">
+                <div class="stark-card-img-wrapper">
+                    <img src="img/mark1.jpg" alt="Mark I" class="stark-card-img">
+                </div>
+                <div class="stark-card-header">
+                    <span class="stark-badge">Mark I</span>
+                    <span class="stark-tag">Protótipo</span>
+                </div>
+                <h3 class="stark-card-title">A Origem</h3>
+                <p class="stark-card-desc">Construída numa caverna com sucata de projéteis e ferro bruto.</p>
+                <div class="stark-stats">
+                    <span>Ano: 2008</span>
+                    <span>Peso: 680kg</span>
+                </div>
+                <button class="stark-btn" onclick="openArmorModal('mark1')">Saiba Mais</button>
+            </article>
+
+            <article class="stark-card">
+                <div class="stark-card-img-wrapper">
+                    <img src="img/m3.jpg" alt="Mark III" class="stark-card-img">
+                </div>
+                <div class="stark-card-header">
+                    <span class="stark-badge">Mark III</span>
+                    <span class="stark-tag">Clássica</span>
+                </div>
+                <h3 class="stark-card-title">Vermelho e Dourado</h3>
+                <p class="stark-card-desc">A primeira armadura a usar a famosa combinação de cores com liga de titânio-ouro.</p>
+                <div class="stark-stats">
+                    <span>Ano: 2008</span>
+                    <span>Voo: Mach 3+</span>
+                </div>
+                <button class="stark-btn" onclick="openArmorModal('mark3')">Saiba Mais</button>
+            </article>
+
+
+            <article class="stark-card">
+                <div class="stark-card-img-wrapper">
+                    <img src="img/m5.jpg" alt="Mark V" class="stark-card-img">
+                </div>
+                <div class="stark-card-header">
+                    <span class="stark-badge">Mark V</span>
+                    <span class="stark-tag">Portátil</span>
+                </div>
+                <h3 class="stark-card-title">Armadura Maleta</h3>
+                <p class="stark-card-desc">Projetada para transporte rápido em formato de maleta executiva.</p>
+                <div class="stark-stats">
+                    <span>Ano: 2010</span>
+                    <span>Tempo: 18s</span>
+                </div>
+                <button class="stark-btn" onclick="openArmorModal('mark5')">Saiba Mais</button>
+            </article>
+
+            <article class="stark-card">
+                <div class="stark-card-img-wrapper">
+                    <img src="img/m44.jpg" alt="Mark XLIV" class="stark-card-img">
+                </div>
+                <div class="stark-card-header">
+                    <span class="stark-badge">Mark XLIV</span>
+                    <span class="stark-tag">Pesada</span>
+                </div>
+                <h3 class="stark-card-title">Hulkbuster</h3>
+                <p class="stark-card-desc">Desenvolvida com Bruce Banner para conter o Hulk em situações extremas.</p>
+                <div class="stark-stats">
+                    <span>Ano: 2015</span>
+                    <span>Altura: 3.3m</span>
+                </div>
+                <button class="stark-btn" onclick="openArmorModal('mark44')">Saiba Mais</button>
+            </article>
+
+            <article class="stark-card">
+                <div class="stark-card-img-wrapper">
+                    <img src="img/m46.jpg" alt="Mark XLVI" class="stark-card-img">
+                </div>
+                <div class="stark-card-header">
+                    <span class="stark-badge">Mark XLVI</span>
+                    <span class="stark-tag">Guerra Civil</span>
+                </div>
+                <h3 class="stark-card-title">Articulada & Rápida</h3>
+                <p class="stark-card-desc">Com múltiplos reatores Arc espalhados pelo corpo para maior resposta tática.</p>
+                <div class="stark-stats">
+                    <span>Ano: 2016</span>
+                    <span>Reatores: 10</span>
+                </div>
+                <button class="stark-btn" onclick="openArmorModal('mark46')">Saiba Mais</button>
+            </article>
+
+            <article class="stark-card">
+                <div class="stark-card-img-wrapper">
+                    <img src="img/m85.jpg" alt="Mark LXXXV" class="stark-card-img">
+                </div>
+                <div class="stark-card-header">
+                    <span class="stark-badge">Mark LXXXV</span>
+                    <span class="stark-tag">Nanotech</span>
+                </div>
+                <h3 class="stark-card-title">A Suprema</h3>
+                <p class="stark-card-desc">Última armadura criada por Tony Stark, combinando nanotecnologia e poder total.</p>
+                <div class="stark-stats">
+                    <span>Ano: 2023</span>
+                    <span>Manopla: Integrada</span>
+                </div>
+                <button class="stark-btn" onclick="openArmorModal('mark85')">Saiba Mais</button>
+            </article>
+
+        </div>
+
+        <div id="starkModalOverlay" class="stark-modal-overlay">
+            <div class="stark-modal">
+                <div class="stark-modal-header">
+                    <div id="modalBadges"></div>
+                    <button class="stark-modal-close" onclick="closeArmorModal()">×</button>
+                </div>
+            
+                <h2 id="modalTitle" class="stark-modal-title"></h2>
+            
+                <div class="stark-modal-grid">
+                    <div class="stark-info-box">
+                        <span>LIGA / MATERIAL</span>
+                        <strong id="modalMaterial"></strong>
+                    </div>
+                    <div class="stark-info-box">
+                        <span>SISTEMA / I.A.</span>
+                        <strong id="modalAI"></strong>
+                    </div>
+                </div>
+
+                <p id="modalDescription" class="stark-modal-desc"></p>
+
+                <div class="stark-modal-section">
+                    <h4>ARSENAL & RECURSOS</h4>
+                    <ul id="modalWeapons" class="stark-weapons-list"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+<script src="js/script.js"></script>
+
+</body>
+</html>

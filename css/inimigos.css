@@ -1,0 +1,97 @@
+.stark-subtitle {
+    text-align: center;
+    color: #ff3333;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    margin-top: -1.5rem;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+}
+
+.stark-card.threat-low {
+    border-left: 4px solid #2ecc71;
+}
+
+.stark-card.threat-medium {
+    border-left: 4px solid #f39c12;
+}
+
+.stark-card.threat-high {
+    border-left: 4px solid #e67e22;
+}
+
+.stark-card.threat-extreme {
+    border-left: 4px solid #e74c3c;
+    box-shadow: inset 0 0 15px rgba(231, 76, 60, 0.05);
+}
+
+
+.stark-threat-tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.stark-threat-tag.low {
+    background: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+    border: 1px solid #2ecc71;
+}
+
+.stark-threat-tag.medium {
+    background: rgba(243, 156, 18, 0.15);
+    color: #f39c12;
+    border: 1px solid #f39c12;
+}
+
+.stark-threat-tag.high {
+    background: rgba(230, 126, 34, 0.15);
+    color: #e67e22;
+    border: 1px solid #e67e22;
+}
+
+.stark-threat-tag.extreme {
+    background: rgba(231, 76, 60, 0.2);
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+    animation: pulseAlert 2s infinite;
+}
+
+@keyframes pulseAlert {
+    0% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.4); }
+    70% { box-shadow: 0 0 0 8px rgba(255, 77, 77, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0); }
+}
+
+.stark-btn-threat {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #7b0000, #b30000);
+    color: #ffffff;
+    border: 1px solid #ff3333;
+    border-radius: 6px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.stark-btn-threat:hover {
+    background: #e60000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+}
+
+.stark-modal.enemy-modal {
+    border-color: #ff3333;
+    box-shadow: 0 0 35px rgba(255, 0, 0, 0.25);
+}
+
+.stark-info-box.alert-box {
+    border-left-color: #ff3333;
+}
+
+.threat-list li::before {
+    content: "⚠️" !important;
+}

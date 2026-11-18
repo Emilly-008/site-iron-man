@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - Homem de Ferro</title>
+    <link rel="icon" type="image/png" href="img/icone-ironman.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/Iron-Man-Logo.png" alt="Iron Man">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="tony-stark.html">Tony Stark</a>
+            <a href="armaduras.html">Armaduras</a>
+            <a href="tecnologias.html">Tecnologias</a>
+            <a href="inimigos.html">Inimigos</a>
+            <a href="filmes.html">Filmes</a>
+            <a href="galeria.html" class="active">Galeria</a>
+            <a href="linhadotempo.html">Linha do tempo</a>
+            <a href="quiz.html">Quiz</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="stark-container">
+            <h2 class="stark-main-title">BANCO DE DADOS VISUAL: GALERIA</h2>
+            <p class="stark-subtitle">REGISTROS HOLOGRÁFICOS E ARQUIVOS DE MÍDIA DA STARK INDUSTRIES</p>
+
+            <div class="gallery-filters">
+                <button class="filter-btn active" onclick="filterGallery('all', this)">Todos</button>
+                <button class="filter-btn" onclick="filterGallery('lab', this)">Laboratório & Oficina</button>
+                <button class="filter-btn" onclick="filterGallery('tech', this)">Tecnologias & Reatores</button>
+                <button class="filter-btn" onclick="filterGallery('scenes', this)">Cenas Icônicas & Vídeos</button>
+                <button class="filter-btn" onclick="filterGallery('concepts', this)">Projetos & Blueprints</button>
+            </div>
+
+            <div class="stark-card audio-terminal-card mb-8" style="background: linear-gradient(135deg, rgba(16, 20, 28, 0.95), rgba(10, 12, 16, 0.98)); border: 1px solid rgba(0, 210, 255, 0.35); border-radius: 12px; padding: 1.5rem; max-width: 800px; margin: 0 auto 2.5rem auto; box-shadow: 0 8px 25px rgba(0, 210, 255, 0.12);">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 10px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <i class="fa-solid fa-wave-square" style="color: #00d2ff; font-size: 1.2rem;"></i>
+                        <span style="font-family: var(--fonte-titulo); font-size: 0.7rem; background: rgba(0, 210, 255, 0.12); color: #00d2ff; padding: 0.3rem 0.75rem; border-radius: 20px; border: 1px solid rgba(0, 210, 255, 0.35); letter-spacing: 1px;">TRANSMISSÃO DE ÁUDIO // ARQUIVO 08</span>
+                    </div>
+                    <span style="font-family: monospace; font-size: 0.8rem; color: #64748b;">ID: RDJ-2008-2019</span>
+                </div>
+                <h3 class="stark-card-title" style="margin-bottom: 0.5rem; font-size: 1.1rem; color: #ffffff;">"The Truth Is... I am Iron Man."</h3>
+                <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 1.2rem;">Registro de áudio oficial capturado dos protocolos de revelação pública.</p>
+                
+                <button onclick="tocarAudioStark()" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 0.75rem; background: rgba(0, 210, 255, 0.15); border: 1px solid #00d2ff; color: #00d2ff; border-radius: 8px; font-family: var(--fonte-titulo); font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px; cursor: pointer; transition: 0.3s;">
+                    <i id="iconeAudio" class="fa-solid fa-play"></i> <span id="textoAudioBtn">REPRODUZIR TRANSMISSÃO</span>
+                </button>
+
+                <audio id="meuAudioStark" preload="auto">
+                    <source src="audio/eu-sou-o-homem-de-ferro.mp3" type="audio/mpeg">
+                    Seu navegador não suporta elementos de áudio.
+                </audio>
+            </div>
+
+            <div class="stark-grid gallery-grid mb-12">
+
+                <article class="stark-card gallery-item" data-category="lab" onclick="openGalleryModal('img/lab.jpg', 'Oficina de Malibu', 'Laboratório principal automatizado com malha de inteligência artificial integrada e ferramentas holográficas.')">
+                    <div class="stark-card-img-wrapper">
+                        <img src="img/lab.jpg" alt="Laboratório" class="stark-card-img">
+                    </div>
+                    <div class="gallery-card-info">
+                        <span class="stark-tag">Laboratório</span>
+                        <h3 class="stark-card-title">Oficina de Pesquisa & Desenvolvimento</h3>
+                    </div>
+                </article>
+
+                <article class="stark-card gallery-item" data-category="tech" onclick="openGalleryModal('img/reator.jpg', 'Mini Reator Arc (Palladium / Vibranium)', 'Fonte de energia limpa autossustentável capaz de gerar gigawatts de potência.')">
+                    <div class="stark-card-img-wrapper">
+                        <img src="img/reator.jpg" alt="Reator Arc" class="stark-card-img">
+                    </div>
+                    <div class="gallery-card-info">
+                        <span class="stark-tag">Tecnologia</span>
+                        <h3 class="stark-card-title">O Reator Arc</h3>
+                    </div>
+                </article>
+
+                <article class="stark-card gallery-item" data-category="tech" onclick="openGalleryModal('img/interface.jpg', 'Interface Holográfica HUD', 'Sistema de projeção espacial tridimensional de alta densidade e rastreamento ocular.')">
+                    <div class="stark-card-img-wrapper">
+                        <img src="img/interface.jpg" alt="Interface HUD" class="stark-card-img">
+                    </div>
+                    <div class="gallery-card-info">
+                        <span class="stark-tag">Tecnologia</span>
+                        <h3 class="stark-card-title">Interface Holográfica Stark</h3>
+                    </div>
+                </article>
+
+                <article class="stark-card gallery-item" data-category="lab" onclick="openGalleryModal('img/armaduras1.jpeg', 'Hall das Armaduras - Malibu', 'O laboratório subterrâneo de Tony Stark exibindo a evolução cronológica de seus protótipos e sistemas avançados[cite: 1].')">
+                    <div class="stark-card-img-wrapper">
+                        <img src="img/armaduras1.jpeg" alt="Hall das Armaduras" class="stark-card-img">
+                    </div>
+                    <div class="gallery-card-info">
+                        <span class="stark-tag">Laboratório</span>
+                        <h3 class="stark-card-title">Hall das Armaduras</h3>
+                    </div>
+                </article>
+                
+                <article class="stark-card gallery-item" data-category="concepts" onclick="openGalleryModal('img/blueprint.jpg', 'Esquemático de Engenharia Avançada', 'Projeção wireframe inicial desenvolvida para testes aerodinâmicos e estruturais de matriz molecular.')">
+                    <div class="stark-card-img-wrapper">
+                        <img src="img/blueprint.jpg" alt="Blueprint" class="stark-card-img">
+                    </div>
+                    <div class="gallery-card-info">
+                        <span class="stark-tag">Projetos</span>
+                        <h3 class="stark-card-title">Blueprints e Rascunhos CAD</h3>
+                    </div>
+                </article>
+
+                <article class="stark-card gallery-item" data-category="scenes" onclick="openGalleryModal('img/estalo.jpg', 'O Legado de Tony Stark', 'Ativação da Manopla tecnológica integrada no complexo dos Vingadores em 2023.')">
+                    <div class="stark-card-img-wrapper">
+                        <img src="img/estalo.jpg" alt="Estalo" class="stark-card-img">
+                    </div>
+                    <div class="gallery-card-info">
+                        <span class="stark-tag">Cena Icônica</span>
+                        <h3 class="stark-card-title">O Sacrifício Final</h3>
+                    </div>
+                </article>
+
+                <article class="stark-card gallery-item" data-category="scenes">
+                    <div class="stark-card-img-wrapper">
+                        <video class="stark-card-video" src="video/videoplayback.mp4" controls preload="metadata"></video>
+                    </div>
+                    <div class="gallery-card-info">
+                        <span class="stark-tag">Cena Icônica</span>
+                        <h3 class="stark-card-title">Homem de Ferro vs Thanos</h3>
+                        <p class="text-xs text-stark-cyan mb-1" style="color: #00d2ff; font-size: 0.8rem;">Guerra Infinita (Titã)</p>
+                        <p class="stark-card-desc">Tony Stark utiliza todo o arsenal da armadura Mark L em nanotecnologia.</p>
+                    </div>
+                </article>
+
+                <article class="stark-card gallery-item" data-category="scenes">
+                    <div class="stark-card-img-wrapper">
+                        <video class="stark-card-video" src="video/luta2.mp4" controls preload="metadata"></video>
+                    </div>
+                    <div class="gallery-card-info">
+                        <span class="stark-tag">Cena Icônica</span>
+                        <h3 class="stark-card-title">Homem de Ferro vs Loki</h3>
+                        <p class="text-xs text-stark-cyan mb-1" style="color: #00d2ff; font-size: 0.8rem;">Os Vingadores (Nova York)</p>
+                        <p class="stark-card-desc">Estreia da Mark VII acionada por braceletes em pleno ar.</p>
+                    </div>
+                </article>
+
+                <article class="stark-card gallery-item" data-category="scenes">
+                    <div class="stark-card-img-wrapper">
+                        <video class="stark-card-video" src="video/luta3.mp4" controls preload="metadata"></video>
+                    </div>
+                    <div class="gallery-card-info">
+                        <span class="stark-tag">Cena Icônica</span>
+                        <h3 class="stark-card-title">Time Stark vs Time Cap</h3>
+                        <p class="text-xs text-stark-cyan mb-1" style="color: #00d2ff; font-size: 0.8rem;">Guerra Civil (Aeroporto)</p>
+                        <p class="stark-card-desc">Combate direto entre as equipes divididas pelos Tratados.</p>
+                    </div>
+                </article>
+
+            </div>
+
+            <div id="galleryModalOverlay" class="stark-modal-overlay">
+                <div class="stark-modal gallery-modal-content">
+                    <div class="stark-modal-header">
+                        <span class="stark-badge" id="galleryModalTag">ARQUIVO HUD</span>
+                        <button class="stark-modal-close" onclick="closeGalleryModal()">×</button>
+                    </div>
+
+                    <div class="gallery-modal-img-container">
+                        <img id="galleryModalImg" src="" alt="Ampliada">
+                    </div>
+
+                    <h2 id="galleryModalTitle" class="stark-modal-title" style="margin-top: 1rem; font-size: 1.4rem;"></h2>
+                    <p id="galleryModalDesc" class="stark-modal-desc"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-stark-hudBorder bg-stark-darkBg mt-12 py-6">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="font-orbitron text-xs text-stark-cyan tracking-widest uppercase mb-2">
+                IRON MAN © 2026 — PROJETO ACADÊMICO
+            </p>
+            <p class="text-xs text-neutral-500">
+                Portal desenvolvido exclusivamente para fins acadêmicos • Universo Homem de Ferro
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function tocarAudioStark() {
+            const audio = document.getElementById('meuAudioStark');
+            const icone = document.getElementById('iconeAudio');
+            const texto = document.getElementById('textoAudioBtn');
+
+            if (audio.paused) {
+                audio.play().then(() => {
+                    icone.className = "fa-solid fa-pause";
+                    texto.textContent = "PAUSAR TRANSMISSÃO";
+                }).catch(error => {
+                    console.error("Erro ao reproduzir:", error);
+                    alert("O navegador bloqueou o áudio ou o ficheiro 'eu-sou-o-homem-de-ferro.mp3' não foi encontrado na pasta 'audio/'.");
+                });
+            } else {
+                audio.pause();
+                icone.className = "fa-solid fa-play";
+                texto.textContent = "REPRODUZIR TRANSMISSÃO";
+            }
+
+            audio.onended = function() {
+                icone.className = "fa-solid fa-play";
+                texto.textContent = "REPRODUZIR TRANSMISSÃO";
+            };
+        }
+    </script>
+    <script src="js/galeria.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Homem-de-Ferro</title>
+    <link rel="icon" type="image/png" href="img/icone-ironman.png">
+</head>
+<body>
+  <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/Iron-Man-Logo.png" alt="Iron Man">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="tony-stark.html">Tony Stark</a>
+            <a href="armaduras.html">Armaduras</a>
+            <a href="tecnologias.html" class="active">Tecnologias</a>
+            <a href="inimigos.html">Inimigos</a>
+            <a href="filmes.html">Filmes</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="linhadotempo.html">Linha do tempo</a>
+            <a href="quiz.html">Quiz</a>
+        </nav>
+    </header>
+
+<section class="stark-container">
+    <h2 class="stark-main-title">DOSSIÊ: PRINCIPAIS AMEAÇAS</h2>
+    
+    <p class="stark-subtitle">BANCO DE DADOS TÁTICO DA STARK INDUSTRIES - NÍVEL DE ACESSO VERMELHO</p>
+
+    <div class="stark-grid">
+        
+        <article class="stark-card threat-high">
+            <div class="stark-card-img-wrapper">
+                <img src="img/obadiah.jpg" alt="Monge de Ferro" class="stark-card-img">
+            </div>
+            <div class="stark-card-header">
+                <span class="stark-badge">Obadiah Stane</span>
+                <span class="stark-threat-tag high">Ameaça Alta</span>
+            </div>
+            <h3 class="stark-card-title">Monge de Ferro</h3>
+            <p class="stark-card-desc">Ex-sócio de Howard Stark que construiu uma versão gigante e bruta da Mark I.</p>
+            <div class="stark-stats">
+                <span>Origem: Stark Ind.</span>
+                <span>Força: Extrema</span>
+            </div>
+            <button class="stark-btn-threat" onclick="openEnemyModal('ironmonger')">Ver Dossiê</button>
+        </article>
+
+        <article class="stark-card threat-medium">
+            <div class="stark-card-img-wrapper">
+                <img src="img/ivan.jpg" alt="Chicote Negro" class="stark-card-img">
+            </div>
+            <div class="stark-card-header">
+                <span class="stark-badge">Ivan Vanko</span>
+                <span class="stark-threat-tag medium">Ameaça Média</span>
+            </div>
+            <h3 class="stark-card-title">Chicote Negro</h3>
+            <p class="stark-card-desc">Físico russo que desenvolveu chicotes de plasma alimentados por um Reator Arc.</p>
+            <div class="stark-stats">
+                <span>Arma: Chicotes Arc</span>
+                <span>Tecnologia: Reversa</span>
+            </div>
+            <button class="stark-btn-threat" onclick="openEnemyModal('whiplash')">Ver Dossiê</button>
+        </article>
+
+        <article class="stark-card threat-high">
+            <div class="stark-card-img-wrapper">
+                <img src="img/aldrich.jpg" alt="Aldrich Killian" class="stark-card-img">
+            </div>
+            <div class="stark-card-header">
+                <span class="stark-badge">Aldrich Killian</span>
+                <span class="stark-threat-tag high">Ameaça Alta</span>
+            </div>
+            <h3 class="stark-card-title">AIM / Extremis</h3>
+            <p class="stark-card-desc">Criador do vírus Extremis, capaz de regeneração instantânea e temperaturas extremas.</p>
+            <div class="stark-stats">
+                <span>Bio-arma: Extremis</span>
+                <span>Organização: AIM</span>
+            </div>
+            <button class="stark-btn-threat" onclick="openEnemyModal('killian')">Ver Dossiê</button>
+        </article>
+
+        <article class="stark-card threat-extreme">
+            <div class="stark-card-img-wrapper">
+                <img src="img/ultron.jpg" alt="Ultron" class="stark-card-img">
+            </div>
+            <div class="stark-card-header">
+                <span class="stark-badge">Ultron</span>
+                <span class="stark-threat-tag extreme">Nível Apocalipse</span>
+            </div>
+            <h3 class="stark-card-title">I.A. Corrompida</h3>
+            <p class="stark-card-desc">Inteligência artificial concebida para proteger a Terra que decidiu erradicar a humanidade.</p>
+            <div class="stark-stats">
+                <span>Corpo: Vibranium</span>
+                <span>Rede: Global</span>
+            </div>
+            <button class="stark-btn-threat" onclick="openEnemyModal('ultron')">Ver Dossiê</button>
+        </article>
+
+        <article class="stark-card threat-extreme">
+            <div class="stark-card-img-wrapper">
+                <img src="img/thanos.jpg" alt="Thanos" class="stark-card-img">
+            </div>
+            <div class="stark-card-header">
+                <span class="stark-badge">Thanos</span>
+                <span class="stark-threat-tag extreme">Nível Cósmico</span>
+            </div>
+            <h3 class="stark-card-title">O Titã Louco</h3>
+            <p class="stark-card-desc">Conquistador intergaláctico que reuniu as seis Joias do Infinito para dizimar metade do universo.</p>
+            <div class="stark-stats">
+                <span>Origem: Titã</span>
+                <span>Arma: Manopla</span>
+            </div>
+            <button class="stark-btn-threat" onclick="openEnemyModal('thanos')">Ver Dossiê</button>
+        </article>
+
+        <article class="stark-card threat-low">
+            <div class="stark-card-img-wrapper">
+                <img src="img/justin.jpg" alt="Justin Hammer" class="stark-card-img">
+            </div>
+            <div class="stark-card-header">
+                <span class="stark-badge">Justin Hammer</span>
+                <span class="stark-threat-tag low">Ameaça Baixa</span>
+            </div>
+            <h3 class="stark-card-title">Hammer Tech</h3>
+            <p class="stark-card-desc">Rival corporativo sem escrúpulos que tenta copiar a tecnologia Stark sem sucesso.</p>
+            <div class="stark-stats">
+                <span>Recursos: Bilionário</span>
+                <span>Perigo: Político</span>
+            </div>
+            <button class="stark-btn-threat" onclick="openEnemyModal('hammer')">Ver Dossiê</button>
+        </article>
+
+    </div>
+
+    <div id="enemyModalOverlay" class="stark-modal-overlay">
+        <div class="stark-modal enemy-modal">
+            <div class="stark-modal-header">
+                <div id="enemyModalBadges"></div>
+                <button class="stark-modal-close" onclick="closeEnemyModal()">×</button>
+            </div>
+            
+            <h2 id="enemyModalTitle" class="stark-modal-title"></h2>
+            
+            <div class="stark-modal-grid">
+                <div class="stark-info-box alert-box">
+                    <span>STATUS ATUAL</span>
+                    <strong id="enemyStatus"></strong>
+                </div>
+                <div class="stark-info-box alert-box">
+                    <span>PRIMEIRA APARIÇÃO</span>
+                    <strong id="enemyAppeared"></strong>
+                </div>
+            </div>
+
+            <p id="enemyModalDescription" class="stark-modal-desc"></p>
+
+            <div class="stark-modal-section">
+                <h4>HABILIDADES E PERIGOS</h4>
+                <ul id="enemyAbilities" class="stark-weapons-list threat-list"></ul>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="border-t border-stark-hudBorder bg-stark-darkBg mt-12 py-6">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="font-orbitron text-xs text-stark-cyan tracking-widest uppercase mb-2">
+            IRON MAN © 2026 — PROJETO ACADÊMICO
+        <p class="text-xs text-neutral-500">
+                Portal desenvolvido exclusivamente para fins acadêmicos • Universo Homem de Ferro
+        </p>
+</footer>
+<script src="js/inimigos.js"></script>
+</body>
+</html>

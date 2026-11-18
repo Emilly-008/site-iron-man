@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stark Industries - Linha do Tempo Interativa</title>
+    <link rel="stylesheet" href="css/linhadotempo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+
+      <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/Iron-Man-Logo.png" alt="Iron Man">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="tony-stark.html">Tony Stark</a>
+            <a href="armaduras.html">Armaduras</a>
+            <a href="tecnologias.html" class="active">Tecnologias</a>
+            <a href="inimigos.html">Inimigos</a>
+            <a href="filmes.html">Filmes</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="linhadotempo.html">Linha do tempo</a>
+            <a href="quiz.html">Quiz</a>
+        </nav>
+    </header>
+    
+    <section class="hero-timeline">
+        <div class="hero-content-wrapper">
+            <span class="badge-jarvis"><i class="fa-solid fa-microchip"></i> ARQUIVO CRONOLÓGICO J.A.R.V.I.S.</span>
+            <h1>Linha do Tempo <span class="text-gold">Stark</span></h1>
+            <p>Explore todos os marcos históricos e tecnológicos da jornada de Tony Stark.</p>
+
+            <div class="filtros-container">
+                <button class="filtro-btn active" onclick="filtrarEventos('todos', this)">Todos os Marcos</button>
+                <button class="filtro-btn" onclick="filtrarEventos('origem', this)">Origem & Invenções</button>
+                <button class="filtro-btn" onclick="filtrarEventos('vingadores', this)">Era Vingadores</button>
+                <button class="filtro-btn" onclick="filtrarEventos('legado', this)">Legado Final</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="timeline-container">
+        <div class="timeline-track-wrapper">
+            <div class="progress-bar" id="progressBar"></div>
+            <div class="years-bar" id="yearsBar">
+
+            </div>
+        </div>
+
+        <div class="event-display" id="eventDisplay">
+            <div class="event-image">
+                <img id="eventImg" src="" alt="Imagem do marco">
+                <span class="event-phase" id="eventPhase">FASE</span>
+            </div>
+
+            <div class="event-content">
+                <div class="event-year" id="eventYear">1970</div>
+                <h2 id="eventTitle">Título do Evento</h2>
+                <p id="eventDesc">Descrição detalhada do acontecimento.</p>
+
+                <div class="event-tech-box">
+                    <strong><i class="fa-solid fa-bolt"></i> Destaque Tecnológico:</strong>
+                    <span id="eventTech">Tecnologia Stark</span>
+                </div>
+
+                <div class="nav-controls">
+                    <button id="prevBtn" onclick="mudarEvento(-1)">
+                        <i class="fa-solid fa-chevron-left"></i> Anterior
+                    </button>
+                    <span class="counter" id="eventCounter">1 / 10</span>
+                    <button id="nextBtn" onclick="mudarEvento(1)">
+                        Próximo <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+<footer class="border-t border-stark-hudBorder bg-stark-darkBg mt-12 py-6">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="font-orbitron text-xs text-stark-cyan tracking-widest uppercase mb-2">
+            IRON MAN © 2026 — PROJETO ACADÊMICO
+        <p class="text-xs text-neutral-500">
+                Portal desenvolvido exclusivamente para fins acadêmicos • Universo Homem de Ferro
+        </p>
+</footer>
+
+    <script>
+        const eventosStark = [
+            {
+                ano: "1970",
+                fase: "ORIGEM",
+                categoria: "origem",
+                titulo: "O Nascimento de um Prodígio",
+                descricao: "Nasce Anthony Edward Stark, filho de Howard e Maria Stark. Desde cedo demonstra um intelecto extraordinário para engenharia e física avançada.",
+                tecnologia: "Primeiros projetos de circuitos aos 4 anos",
+                imagem: "img/pqn.jpeg"
+            },
+            {
+                ano: "1991",
+                fase: "ORIGEM",
+                categoria: "origem",
+                titulo: "A Perda dos Pais",
+                descricao: "Howard e Maria Stark falecem tragicamente em um acidente automobilístico planejado pela Hidra (com o Soldado Invernal), fazendo com que Tony herde a Stark Industries jovem.",
+                tecnologia: "Consolidação corporativa da Stark Industries",
+                imagem: "img/luto.jpeg"
+            },
+            {
+                ano: "2008",
+                fase: "ORIGEM",
+                categoria: "origem",
+                titulo: "\"Eu sou o Homem de Ferro\"",
+                descricao: "Sequestrado por terroristas no Afeganistão, Tony constrói a armadura Mark I e o primeiro Reator Arc miniaturizado. Ao retornar, encerra a fabricação de armas da empresa.",
+                tecnologia: "Reator Arc Mark I & Armadura Mark I",
+                imagem: "img/sequestro.jpeg"
+            },
+            {
+                ano: "2010",
+                fase: "INOVAÇÃO",
+                categoria: "origem",
+                titulo: "A Descoberta de um Novo Elemento",
+                descricao: "Enquanto sofria envenenamento por paládio, Tony usa os velhos registros de seu pai para construir um acelerador de partículas e sintetizar um elemento químico inédito.",
+                tecnologia: "Acelerador de Partículas Caseiro & Reator Arc Prateado",
+                imagem: "img/descoberta.jpeg"
+            },
+            {
+                ano: "2012",
+                fase: "VINGADORES",
+                categoria: "vingadores",
+                titulo: "A Batalha de Nova York",
+                descricao: "Tony lidera a primeira formação dos Vingadores contra a invasão Chitauri. Ele desvia um míssil nuclear rumo ao espaço, quase sacrificando sua vida para salvar a Terra.",
+                tecnologia: "Torre Stark Autosustentável & Mark VII (Ativação por Bracelete)",
+                imagem: "img/im.jpeg"
+            },
+            {
+                ano: "2013",
+                fase: "VINGADORES",
+                categoria: "vingadores",
+                titulo: "Protocolo Casa de Festa",
+                descricao: "Sofrendo de crises de ansiedade pós-Nova York, Tony cria dezenas de armaduras automatizadas e enfrenta o Mandaliniano/Aldrich Killian com o Extremis.",
+                tecnologia: "Dezenas de Armaduras Autônomas & Controle Remoto Modular",
+                imagem: "img/casafesta.jpeg"
+            },
+            {
+                ano: "2015",
+                fase: "VINGADORES",
+                categoria: "vingadores",
+                titulo: "A Criação de Ultron e do Visão",
+                descricao: "Na tentativa de criar um sistema global de defesa preventiva, Tony desenvolve Ultron. Após o colapso, ele ajuda a dar vida ao Visão combinando J.A.R.V.I.S. com a Joia da Mente.",
+                tecnologia: "Inteligência Artificial Global & Matriz Sintética do Visão",
+                imagem: "img/ultron.jpeg"
+            },
+            {
+                ano: "2016",
+                fase: "VINGADORES",
+                categoria: "vingadores",
+                titulo: "Os Acordos de Sokovia & Guerra Civil",
+                descricao: "Dividido pelo peso da culpa e pela regulamentação governamental dos heróis, Tony entra em conflito direto com Steve Rogers (Capitão América) após descobrir a verdade sobre a morte de seus pais.",
+                tecnologia: "Nanotecnologia Inicial de Pulso & Sonda de Memória",
+                imagem: "img/acordo.jpeg"
+            },
+            {
+                ano: "2018",
+                fase: "LEGADO",
+                categoria: "legado",
+                titulo: "A Batalha em Titã contra Thanos",
+                descricao: "Levando a tecnologia ao seu limite máximo, Tony enfrenta Thanos cara a cara no planeta Titã, utilizando nanobôs flexíveis e avançados antes de ser ferido pelo Titã Louco.",
+                tecnologia: "Armadura Mark L (Nanotecnologia Líquida Avançada)",
+                imagem: "img/batalha.jpeg"
+            },
+            {
+                ano: "2023",
+                fase: "LEGADO",
+                categoria: "legado",
+                titulo: "O Estalo Final e o Legado Eterno",
+                descricao: "Tony soluciona a equação quântica da viagem no tempo, constrói a Manopla Nano e realiza o sacrifício definitivo para estalar os dedos e apagar Thanos e seu exército, salvando o universo.",
+                tecnologia: "GPS Espaço-Temporal & Manopla Nano com as Joias do Infinito",
+                imagem: "img/batalhathanos.jpeg"
+            }
+        ];
+
+        let eventosFiltrados = [...eventosStark];
+        let indiceAtual = 0;
+
+        const yearsBar = document.getElementById("yearsBar");
+        const progressBar = document.getElementById("progressBar");
+        const eventDisplay = document.getElementById("eventDisplay");
+        const eventImg = document.getElementById("eventImg");
+        const eventPhase = document.getElementById("eventPhase");
+        const eventYear = document.getElementById("eventYear");
+        const eventTitle = document.getElementById("eventTitle");
+        const eventDesc = document.getElementById("eventDesc");
+        const eventTech = document.getElementById("eventTech");
+        const eventCounter = document.getElementById("eventCounter");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+
+        function renderizarBarraAnos() {
+            yearsBar.innerHTML = "";
+            eventosFiltrados.forEach((evento, index) => {
+                const btn = document.createElement("button");
+                btn.classList.add("year-node");
+                if (index === indiceAtual) btn.classList.add("active");
+                btn.innerText = evento.ano;
+                btn.onclick = () => selecionarEvento(index);
+                yearsBar.appendChild(btn);
+            });
+        }
+
+        function selecionarEvento(novoIndice) {
+            indiceAtual = novoIndice;
+            const evento = eventosFiltrados[indiceAtual];
+
+            eventDisplay.classList.add("fade-out");
+
+            setTimeout(() => {
+                eventImg.src = evento.imagem;
+                eventPhase.innerText = evento.fase;
+                eventYear.innerText = evento.ano;
+                eventTitle.innerText = evento.titulo;
+                eventDesc.innerText = evento.descricao;
+                eventTech.innerText = evento.tecnologia;
+                eventCounter.innerText = `${indiceAtual + 1} / ${eventosFiltrados.length}`;
+
+                prevBtn.disabled = indiceAtual === 0;
+                nextBtn.disabled = indiceAtual === eventosFiltrados.length - 1;
+
+                const porcentagem = eventosFiltrados.length > 1
+                    ? (indiceAtual / (eventosFiltrados.length - 1)) * 100
+                    : 100;
+                progressBar.style.width = `${porcentagem}%`;
+
+                renderizarBarraAnos();
+                eventDisplay.classList.remove("fade-out");
+            }, 150);
+        }
+
+        function mudarEvento(direcao) {
+            const proximo = indiceAtual + direcao;
+            if (proximo >= 0 && proximo < eventosFiltrados.length) {
+                selecionarEvento(proximo);
+            }
+        }
+
+        function filtrarEventos(categoria, botaoClicado) {
+            document.querySelectorAll(".filtro-btn").forEach(btn => btn.classList.remove("active"));
+            botaoClicado.classList.add("active");
+
+            if (categoria === "todos") {
+                eventosFiltrados = [...eventosStark];
+            } else {
+                eventosFiltrados = eventosStark.filter(e => e.categoria === categoria);
+            }
+
+            indiceAtual = 0;
+            selecionarEvento(0);
+        }
+
+        selecionarEvento(0);
+    </script>
+</body>
+</html>

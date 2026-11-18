@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Quiz | Homem de Ferro</title>
+    <link rel="icon" type="image/png" href="img/icone-ironman.png">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/Iron-Man-Logo.png" alt="Iron Man">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="tony-stark.html">Tony Stark</a>
+            <a href="armaduras.html">Armaduras</a>
+            <a href="tecnologias.html">Tecnologias</a>
+            <a href="inimigos.html">Inimigos</a>
+            <a href="filmes.html">Filmes</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="linhadotempo.html">Linha do tempo</a>
+            <a href="quiz.html" class="active">Quiz</a>
+        </nav>
+    </header>
+
+    <main class="stark-container">
+        <h2 class="stark-main-title">QUIZ STARK INDUSTRIES</h2>
+        <p class="stark-subtitle">TESTE SEUS CONHECIMENTOS SOBRE O HOMEM DE FERRO</p>
+
+        <section class="stark-card" style="max-width: 750px; margin: 0 auto; padding: 2rem;">
+
+            <div id="areaQuiz">
+                <div style="background-color: #1E2D4A; height: 8px; border-radius: 4px; margin-bottom: 1.5rem; overflow: hidden;">
+                    <div id="progresso" style="background-color: #00F0FF; height: 100%; width: 0%; transition: width 0.3s ease;"></div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-family: 'Orbitron', sans-serif; font-size: 0.85rem; color: #00F0FF;">
+                    <span id="numeroPergunta">Pergunta 1 de 10</span>
+                    <span id="pontuacao">Pontos: 0</span>
+                </div>
+
+                <h3 id="pergunta" style="font-family: 'Orbitron', sans-serif; font-size: 1.15rem; color: #ffffff; margin-bottom: 1.5rem; line-height: 1.4;"></h3>
+
+                <div id="alternativas" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 1.5rem;"></div>
+
+                <p id="feedback" style="font-family: 'Orbitron', sans-serif; font-size: 0.9rem; min-height: 24px; margin-bottom: 1.5rem; font-weight: bold;"></p>
+
+                <button type="button" id="botaoConfirmar" disabled>
+                    Confirmar resposta
+                </button>
+            </div>
+
+            <div id="resultado" hidden style="text-align: center; padding: 1.5rem 0;">
+                <h3 style="font-family: 'Orbitron', sans-serif; font-size: 1.6rem; color: #FFD700; margin-bottom: 1rem;">
+                    DIAGNÓSTICO CONCLUÍDO
+                </h3>
+
+                <p id="pontuacaoFinal" style="font-size: 1.25rem; color: #ffffff; font-weight: bold; margin-bottom: 0.75rem;"></p>
+                <p id="mensagemFinal" style="color: #00F0FF; font-size: 1rem; margin-bottom: 2rem;"></p>
+
+                <button type="button" id="botaoReiniciar" class="botaoReiniciar" style="cursor: pointer; display: inline-block;">
+                    Reiniciar Quiz
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="border-t border-stark-hudBorder bg-stark-darkBg mt-12 py-6">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="font-orbitron text-xs text-stark-cyan tracking-widest uppercase mb-2">
+                IRON MAN © 2026 — PROJETO ACADÊMICO
+            </p>
+            <p class="text-xs text-neutral-500">
+                Portal desenvolvido exclusivamente para fins acadêmicos • Universo Homem de Ferro
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/quiz.js"></script>
+</body>
+</html>

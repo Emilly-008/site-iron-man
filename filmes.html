@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stark Industries - Cinematografia & Tecnologia</title>
+    <link rel="stylesheet" href="css/filmesstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+      <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/Iron-Man-Logo.png" alt="Iron Man">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="tony-stark.html">Tony Stark</a>
+            <a href="armaduras.html">Armaduras</a>
+            <a href="tecnologias.html" class="active">Tecnologias</a>
+            <a href="inimigos.html">Inimigos</a>
+            <a href="filmes.html">Filmes</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="linhadotempo.html">Linha do tempo</a>
+            <a href="quiz.html">Quiz</a>
+        </nav>
+    </header>
+
+
+    <div class="navbar">
+        <div class="logo">
+            <span class="highlight-red">STARK</span><span class="highlight-yellow">CINEMA</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Início</a></li>
+                <li><a href="#trailer">Trailer & Mídia</a></li>
+                <li><a href="#opiniao-trailer">Opinião do Trailer</a></li>
+                <li><a href="#tecnologias">Tecnologias do Filme</a></li>
+                <li><a href="#cenas">Cenas Marcantes</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="badge">Universo Cinematográfico</span>
+            <h1>A Evolução Tecnológica de <span class="text-yellow">Tony Stark</span> nas Telas</h1>
+            <p>Explore as inovações, engenharia avançada e os sistemas futuristas apresentados nos filmes do Homem de Ferro, agora com reprodução de vídeo integrada.</p>
+            <div class="hero-buttons">
+                <a href="#trailer" class="btn btn-primary"><i class="fa-solid fa-play"></i> Assistir Trailer</a>
+                <a href="#tecnologias" class="btn btn-secondary">Ver Tecnologias</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="img/1043779651160642908.jpeg" alt="Holografia e Inovação Cinematográfica">
+        </div>
+    </section>
+
+    <section id="trailer" class="section bg-darker">
+        <h2 class="section-title">Trailer & <span class="text-red">Vídeo</span> Oficial</h2>
+        <p class="section-subtitle">Assista à Ultiimo Lançamento com participação do Homem de Ferro.</p>
+        
+        <div class="video-container-wrapper">
+            <div class="video-frame">
+                <iframe src="video/Vingadores Ultimato Trailer 2 Dublado (HD) - Marvel Geek (720p).mp4" 
+                        title="Trailer Vingadores Ultimato" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="opiniao-trailer" class="section">
+        <h2 class="section-title">Opinião dos Fãs & <span class="text-yellow">Repercussão</span></h2>
+        <p class="section-subtitle">O que a comunidade está a dizer sobre a exibição e os efeitos visuais do trailer oficial.</p>
+
+        <div class="opinions-grid">
+            <div class="opinion-card">
+                <div class="opinion-header">
+                    <span class="user-name"><i class="fa-solid fa-user-shield"></i> Pepper Potts</span>
+                    <span class="rating">⭐⭐⭐⭐⭐</span>
+                </div>
+                <p class="opinion-text">"Os detalhes dos efeitos visuais e a forma como o Reator Arc brilha nas cenas de ação superaram todas as expectativas. Uma obra-prima visual!"</p>
+                <span class="opinion-tag">Crítica Verificada</span>
+            </div>
+
+            <div class="opinion-card">
+                <div class="opinion-header">
+                    <span class="user-name"><i class="fa-solid fa-robot"></i> James Rhodes</span>
+                    <span class="rating">⭐⭐⭐⭐⭐</span>
+                </div>
+                <p class="opinion-text">"A sincronização de áudio e a trilha sonora no trailer dão arrepios. A Stark Industries realmente sabe como impressionar nas telas."</p>
+                <span class="opinion-tag">Especialista em Defesa</span>
+            </div>
+
+            <div class="opinion-card">
+                <div class="opinion-header">
+                    <span class="user-name"><i class="fa-solid fa-bolt"></i> Peter Parker</span>
+                    <span class="rating">⭐⭐⭐⭐⭐</span>
+                </div>
+                <p class="opinion-text">"Uau! Ver as tecnologias e os trajes em alta definição no trailer oficial é simplesmente incrível. Mal posso esperar para ver o filme completo!"</p>
+                <span class="opinion-tag">Estudante & Fã</span>
+            </div>
+        </div>
+
+        <div class="form-container-wrapper" style="margin-top: 50px;">
+            <h3 style="color: #ffb700; margin-bottom: 20px; font-size: 1.4rem; text-align: center;">
+                <i class="fa-solid fa-comments"></i> Deixe a sua Opinião sobre o Trailer
+            </h3>
+            <form class="stark-form" action="#" method="POST">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nome-opiniao"><i class="fa-solid fa-user"></i> O seu Nome</label>
+                        <input type="text" id="nome-opiniao" name="nome-opiniao" placeholder="Ex: Tony Stark" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expectativa"><i class="fa-solid fa-chart-line"></i> Nível de Expectativa</label>
+                        <select id="expectativa" name="expectativa">
+                            <option value="maxima">🔥 Máxima (Impressionante!)</option>
+                            <option value="alta">⚡ Alta (Muito bom)</option>
+                            <option value="boa">👍 Boa (Esperava um pouco mais)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="comentario-trailer"><i class="fa-solid fa-message"></i> O que achou dos gráficos e do trailer?</label>
+                    <textarea id="comentario-trailer" name="comentario-trailer" rows="4" placeholder="Escreva a sua análise sobre o vídeo, trilha sonora ou cenas mostradas..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit">
+                    <i class="fa-solid fa-paper-plane"></i> Publicar Opinião no Sistema
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <section id="tecnologias" class="section">
+        <h2 class="section-title">Tecnologias Retratadas no <span class="text-yellow">Filme</span></h2>
+        <p class="section-subtitle">Inovações científicas e de engenharia exibidas nas telonas.</p>
+        
+        <div class="tech-grid">
+            <div class="tech-card">
+                <div class="tech-img-container">
+                    <img src="c:\Users\luizg\Downloads\939000591028332773.jpg" alt="Reator Arc">
+                </div>
+                <div class="tech-info">
+                    <span class="tech-tag tag-yellow">Energia</span>
+                    <h3>Reator Arc Portátil</h3>
+                    <p>Miniaturização de uma usina de fusão nuclear capaz de manter o eletroímã do coração ativo e alimentar sistemas complexos.</p>
+                </div>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-img-container">
+                    <img src="img/nan.jpeg" alt="Nanotecnologia">
+                </div>
+                <div class="tech-info">
+                    <span class="tech-tag tag-red">Nanobôs</span>
+                    <h3>Nanotecnologia Líquida</h3>
+                    <p>Armazenamento de componentes modulares diretamente em uma habitação no peito, ativados por comando neural instantâneo.</p>
+                </div>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-img-container">
+                    <img src="img/jarvis.jpeg" alt="I.A. Jarvis">
+                </div>
+                <div class="tech-info">
+                    <span class="tech-tag tag-yellow">Inteligência Artificial</span>
+                    <h3>Assistente J.A.R.V.I.S.</h3>
+                    <p>Software de inteligência artificial avançada integrado à oficina, residência e sistemas táticos de voo.</p>
+                </div>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-img-container">
+                    <img src="img/iron.jpeg" alt="Propulsão">
+                </div>
+                <div class="tech-info">
+                    <span class="tech-tag tag-red">Cinética</span>
+                    <h3>Propulsão por Repulsores</h3>
+                    <p>Dispositivos de controle de campo magnético e conversão de energia para estabilização de voo supersônico.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cenas" class="section bg-darker">
+        <h2 class="section-title">Momentos Icônicos & <span class="text-yellow">Especificações</span></h2>
+        <div class="methods-table-wrapper">
+            <table class="methods-table">
+            <thead>
+                <tr>
+                    <th>Filme / Momento</th>
+                    <th>Tecnologia Destaque</th>
+                    <th>Impacto Cinematográfico</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="method-badge mark1">Homem de Ferro (2008)</span></td>
+                    <td>Protótipo de Oficina & Reator Arc</td>
+                    <td>Construção da primeira unidade de energia limpa em uma caverna com recursos limitados.</td>
+                </tr>
+                <tr>
+                    <td><span class="method-badge mark3">Homem de Ferro 2 (2010)</span></td>
+                    <td>Síntese de Novo Elemento</td>
+                    <td>Criação de um acelerador de partículas caseiro para descobrir um elemento livre de toxicidade.</td>
+                </tr>
+                <tr>
+                    <td><span class="method-badge mark5">Homem de Ferro 3 (2013)</span></td>
+                    <td>Protocolo Casa de Festa & Controle Remoto</td>
+                    <td>Sincronização de dezenas de unidades autônomas operadas simultaneamente via inteligência artificial.</td>
+                </tr>
+                <tr>
+                    <td><span class="method-badge infinity">Vingadores: Ultimato (2019)</span></td>
+                    <td>Navegação Temporal & Manopla Nano</td>
+                    <td>Resolução do problema matemático de viagem no tempo e criação do aparato com as Joias do Infinito.</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </section>
+
+<footer class="border-t border-stark-hudBorder bg-stark-darkBg mt-12 py-6">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="font-orbitron text-xs text-stark-cyan tracking-widest uppercase mb-2">
+            IRON MAN © 2026 — PROJETO ACADÊMICO
+        <p class="text-xs text-neutral-500">
+                Portal desenvolvido exclusivamente para fins acadêmicos • Universo Homem de Ferro
+        </p>
+</footer>
+</body>
+</html>
